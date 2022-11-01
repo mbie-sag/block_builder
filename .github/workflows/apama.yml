@@ -3,15 +3,11 @@ on:
   workflow_dispatch:
   push:
     branches: [ "master" ]
-    paths: ./streaming-analytics/blocks
-  pull_request:
-    branches: [ "master" ]
-    paths: ./streaming-analytics/blocks
  
 
 env:
   SETUP_APAMA_VERSION: 10.5.3.2
-  BLOCK_BUILDER_VERSION : 10.13.0.1
+  BLOCK_BUILDER_VERSION : 10.15.0.1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -74,7 +70,7 @@ jobs:
           unzip -q block-builder.zip
           cd apama-analytics-builder-block-sdk-$BLOCK_BUILDER_VERSION
           echo Upload analytics builder blocks to cumulocity
-          ls $GITHUB_WORKSPACE/streaming-analytics/blocks
-          python3 analytics_builder build extension --input $GITHUB_WORKSPACE/streaming-analytics/blocks --cumulocity_url ${{ secrets.PARAM1 }} --username ${{ secrets.PARAM2 }}/${{ secrets.PARAM3 }} --password ${{ secrets.PARAM4 }} --name semis --restart
+          ls $GITHUB_WORKSPACE/blocks
+          python3 analytics_builder build extension --input $GITHUB_WORKSPACE/blocks --cumulocity_url ${{ secrets.PARAM1 }} --username ${{ secrets.PARAM2 }}/${{ secrets.PARAM3 }} --password ${{ secrets.PARAM4 }} --name semis --restart
           
   
