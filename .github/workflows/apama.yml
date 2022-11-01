@@ -71,6 +71,6 @@ jobs:
           cd apama-analytics-builder-block-sdk-$BLOCK_BUILDER_VERSION
           echo Upload analytics builder blocks to cumulocity
           ls $GITHUB_WORKSPACE/blocks
-          python3 analytics_builder build extension --input $GITHUB_WORKSPACE/blocks --cumulocity_url ${{ secrets.PARAM1 }} --username ${{ secrets.PARAM2 }}/${{ secrets.PARAM3 }} --password ${{ secrets.PARAM4 }} --name semis --restart
+          python3 analytics_builder build extension --input $GITHUB_WORKSPACE/blocks --cumulocity_url ${{ secrets.PARAM1 }} --username ${{ secrets.PARAM2 }}/${{ secrets.PARAM3 }} --password ${{ secrets.PARAM4 }} --name WebhookPut --restart
           
   

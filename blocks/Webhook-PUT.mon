@@ -71,7 +71,7 @@ event HTTPWebhook_$Parameters {
 }
 
 /**
- * HTTP Webhook
+ * HTTP Webhook Put
  *
  * Invokes a REST endpoint using PUT
  *
@@ -132,7 +132,7 @@ event HTTPWebhook {
 	 *
 	 * @param $activation  The current activation, contextual information required when generating a block output. Blocks should only use the
 	 * <tt>Activation</tt> object passed to them from the framework, never creating their own or holding on to an <tt>Activation</tt> object.
-	 * @param $input_value Input value to the block. This will be sent in the body of the PUT request.
+	 * @param $input_value Input value to the block. This will be sent in the body of the put request.
 	 * @param $modelScopeParameters  Dictionary containing the information about the model.
 	 *
 	 * @$inputName value Value
