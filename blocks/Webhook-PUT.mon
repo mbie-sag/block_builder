@@ -20,7 +20,7 @@ using com.softwareag.connectivity.httpclient.Response;
 /**
  * Event definition of the parameters for the HTTP Webhook block.
  */
-event HTTPWebhook_$Parameters {
+event HTTPWebhookPut_$Parameters {
 	
 	/**
 	 * Host.
@@ -65,7 +65,7 @@ event HTTPWebhook_$Parameters {
 	action $validate() {
 		BlockBase.throwsOnEmpty(host, "host", self);
 		if port < 0 and port > 65535 {
-			throw L10N.getLocalizedException("HTTPWebhook_unexpected_port_value", [<any> port]);
+			throw L10N.getLocalizedException("HTTPWebhookPut_unexpected_port_value", [<any> port]);
 		}
 	}
 }
@@ -95,7 +95,7 @@ event HTTPWebhook_$Parameters {
  *
  * @$blockCategory Output
  */
-event HTTPWebhook {
+event HTTPWebhookPut {
 
 	/**BlockBase object.
 	 *
@@ -104,7 +104,7 @@ event HTTPWebhook {
 	BlockBase $base;
 	
 	/**The parameters for the block.*/
-	HTTPWebhook_$Parameters $parameters;
+	HTTPWebhookPut_$Parameters $parameters;
 	
 	/**
 	 * Handle to the connectivity chain that will handle the requests. It is created in the <tt>$init</tt> method and not in the <tt>$validate</tt> method so it only gets created if the model will become active. 
