@@ -7,7 +7,7 @@ on:
 
 env:
   SETUP_APAMA_VERSION: 10.5.3.2
-  BLOCK_BUILDER_VERSION : 10.15.0.1
+  BLOCK_BUILDER_VERSION : 10.14.0.3
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
