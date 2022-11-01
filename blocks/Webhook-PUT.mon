@@ -140,7 +140,7 @@ event HTTPWebhookPut {
 	action $process(Activation $activation, Value $input_value, dictionary<string, any> $modelScopeParameters) {
 		string modelName := $modelScopeParameters.getOrDefault(ABConstants.MODEL_NAME_IDENTIFIER).valueToString();
 		
-		any data := {"modelName":<any>modelName, "value":$input_value }; // $input_value is a Value object with fields value, timestamp, properties - this will be output as a JSON object.
+		any data := $input_value.value ; // $input_value is a Value object with fields value, timestamp, properties - this will be output as a JSON object.
 		
 		// Create the request event.
 		Request req := transport.createPUTRequest($parameters.path, data);
