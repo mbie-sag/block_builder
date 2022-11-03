@@ -1,4 +1,3 @@
-				req.setHeader("Authorization", auth);
 			}
 		}
 
@@ -18,4 +17,3 @@
 	/**To let framework know block is using latest APIs.*/
 	constant integer BLOCK_API_VERSION := 2;
 }
-
